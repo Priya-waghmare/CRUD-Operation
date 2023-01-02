@@ -1,0 +1,28 @@
+<h1>EDIT YOUR INFO</h1>
+
+<div class ="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <form [formGroup]="editstudform" (ngSubmit)="onupdate()">
+            <div class="form-group">
+                <label for="name"> Student ID</label>
+                <input type="number"  class="form-control" formControlName="id" required placeholder="Student ID">
+                <span style="color:red;" *ngIf="editstudform.controls['id'] && editstudform.controls['id'].touched && editstudform.controls['id'].invalid">Required Field</span> <br>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" required placeholder="Student Name">
+                <span style="color:red;" *ngIf="editstudform.controls['name'] && editstudform.controls['name'].touched && editstudform.controls['name'].invalid">Required Field</span> <br>
+            </div>
+            <div class="form-group">
+                <label for="name">Marks</label>
+                <input type="number" class="form-control" formControlName="marks" required placeholder="Marks">
+                <span style="color:red;" *ngIf="editstudform.controls['marks'] && editstudform.controls['marks'].touched && editstudform.controls['marks'].invalid">Required Field</span> <br>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-btn-success" type="submit"[disabled]="editstudform.invalid">UPDATE</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
